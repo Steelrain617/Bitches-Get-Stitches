@@ -1,0 +1,716 @@
+:root {
+ 
+  --color-cream: #f8f1e7;
+  --color-paper: #fffaf3;
+
+  --color-red: #9f1717;
+  --color-red-dark: #701010;
+  --color-red-light: #d96b62;
+
+  --color-black: #171414;
+  --color-text: #2b2222;
+  --color-muted: #756767;
+  --color-border: #e6c9c3;
+
+ 
+  --color-sage: #b94b43;
+  --color-sage-dark: #701010;
+  --color-clay: #a71919;
+
+ --font-body: "Nunito", sans-serif;
+--font-heading: "Shrikhand", cursive;
+
+  --container-width: 1100px;
+  --border-radius: 24px;
+}
+
+
+
+
+
+/* =========================================================
+   2. RESET & BASE STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+
+  background:
+    radial-gradient(circle at 10% 20%, rgba(159, 23, 23, 0.08), transparent 25%),
+    radial-gradient(circle at 90% 60%, rgba(217, 107, 98, 0.12), transparent 25%),
+    #f8f1e7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   3. LAYOUT HELPERS
+   ========================================================= */
+
+.container {
+  width: min(var(--container-width), 90%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section.alt {
+  background: var(--color-paper);
+}
+
+.page-head {
+  padding: 65px 0 35px;
+  text-align: center;
+}
+
+
+/* =========================================================
+   4. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0.15em 0;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+}
+
+h2 {
+  margin: 0.2em 0 0.5em;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.lead {
+  max-width: 620px;
+  color: var(--color-muted);
+  font-size: 1.12rem;
+}
+
+.eyebrow {
+  color: var(--color-clay);
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.note {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+
+
+/* =========================================================
+   5. HEADER & NAVIGATION
+   ========================================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: rgba(255, 250, 243, 0.96);
+
+  border-bottom: 3px solid var(--color-red);
+
+  box-shadow:
+    0 4px 20px rgba(80, 20, 20, 0.08);
+}
+
+
+/* HEADER LAYOUT */
+
+.nav {
+  display: flex;
+  min-height: 90px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+/* BUSINESS NAME */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  color: var(--color-red);
+
+  font-family: "Shrikhand", cursive;
+  font-size: 1.8rem;
+
+  text-decoration: none;
+
+  line-height: 1;
+
+  text-shadow:
+    2px 2px 0 rgba(159, 23, 23, 0.15);
+}
+
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+nav a {
+  display: inline-block;
+
+  padding: 9px 15px;
+
+  color: var(--color-black);
+
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  border-radius: 999px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+nav a:hover {
+  background: var(--color-red);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* LOGO */
+
+.header-logo {
+  width: 72px;
+  height: 72px;
+
+  object-fit: cover;
+
+  border: 3px solid var(--color-red);
+  border-radius: 50%;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   6. BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+
+  background: var(--color-red);
+  border: 2px solid var(--color-red);
+  border-radius: 999px;
+
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  text-decoration: none;
+
+  box-shadow: 0 5px 0 var(--color-red-dark);
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--color-red-dark);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background: var(--color-paper);
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  box-shadow: 0 5px 0 var(--color-black);
+}
+
+.btn.secondary:hover {
+  background: var(--color-black);
+  color: white;
+}
+
+
+/* =========================================================
+   7. HOME / HERO
+   ========================================================= */
+
+.hero {
+  padding: 80px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hero-art {
+  display: grid;
+  min-height: 480px;
+  place-items: center;
+  padding: 40px;
+
+  background:
+    radial-gradient(circle at 18% 20%, #b52020 0 10%, transparent 11%),
+    radial-gradient(circle at 82% 30%, #e29a91 0 14%, transparent 15%),
+    radial-gradient(circle at 30% 82%, #171414 0 9%, transparent 10%),
+    radial-gradient(circle at 75% 75%, #c94b42 0 13%, transparent 14%),
+    #fff5eb;
+
+  border: 3px solid var(--color-red);
+  border-radius: 36px;
+  box-shadow: 10px 10px 0 var(--color-black);
+}
+
+
+/* =========================================================
+   8. CONTENT SECTIONS & CARDS
+   ========================================================= */
+.card {
+  padding: 26px;
+
+  background: var(--color-paper);
+  border: 2px solid var(--color-red);
+  border-radius: var(--border-radius);
+
+  box-shadow: 7px 7px 0 rgba(159, 23, 23, 0.15);
+
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 10px 12px 0 rgba(159, 23, 23, 0.2);
+}
+
+.card:nth-child(even):hover {
+  transform: translateY(-6px) rotate(1deg);
+}
+
+
+/* =========================================================
+   9. GALLERY
+   ========================================================= */
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  padding: 20px 0 90px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+
+  background: #fffaf3;
+  border: 3px solid var(--color-black);
+  border-radius: 28px;
+
+  box-shadow: 9px 9px 0 var(--color-red);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.gallery-item:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px) rotate(0deg) scale(1.02);
+  box-shadow: 13px 13px 0 var(--color-black);
+}
+
+.gallery-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-photo {
+  transform: scale(1.08);
+}
+
+.gallery-copy {
+  position: relative;
+  padding: 22px 24px 25px;
+
+  background: #fffaf3;
+}
+
+.gallery-copy h3 {
+  margin: 0 0 5px;
+
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+}
+
+.gallery-copy p {
+  margin: 0;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+/* =========================================================
+   10. CONTACT FORM
+   ========================================================= */
+
+
+.contact-wrapper {
+  max-width: 1050px;
+}
+
+
+/* BIG OUTER CONTACT CARD */
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  overflow: hidden;
+
+  background: var(--color-paper);
+
+  border: 3px solid var(--color-black);
+  border-radius: 32px;
+
+  box-shadow: 12px 12px 0 var(--color-red);
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.contact-intro {
+  padding: 45px;
+
+  background: var(--color-red);
+  color: white;
+}
+
+.contact-intro .eyebrow {
+  color: white;
+}
+
+.contact-intro h2 {
+  color: white;
+
+  margin-top: 12px;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.contact-intro p {
+  color: #fff5ed;
+
+  font-size: 1.05rem;
+}
+
+
+/* INSTAGRAM */
+
+.instagram-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 25px;
+  padding: 10px 15px;
+
+  background: var(--color-paper);
+  color: var(--color-red);
+
+  border: 2px solid var(--color-black);
+  border-radius: 999px;
+
+  font-weight: 800;
+  text-decoration: none;
+
+  box-shadow: 4px 4px 0 var(--color-black);
+
+  transition: 0.2s ease;
+}
+
+
+.instagram-contact svg {
+  width: 25px;
+  height: 25px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+
+.instagram-contact:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 6px 6px 0 var(--color-black);
+}
+
+
+/* =========================================================
+   FORM SIDE
+   ========================================================= */
+
+.contact-form {
+  margin: 0;
+
+  padding: 45px;
+
+  background: var(--color-paper);
+
+  border: 0;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+/* FORM HEADING */
+
+.contact-form h2 {
+  margin: 0 0 25px;
+
+  color: var(--color-red);
+
+  font-family: var(--font-heading);
+
+  font-size: 2.3rem;
+}
+
+
+/* LABELS */
+
+.contact-form label {
+  display: block;
+
+  margin: 20px 0 7px;
+
+  color: var(--color-black);
+
+  font-size: 0.8rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* INPUTS */
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  background: #fffaf3;
+
+  border: 2px solid var(--color-black);
+  border-radius: 14px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+
+  outline: none;
+
+  box-shadow: 4px 4px 0 rgba(159, 23, 23, 0.22);
+
+  transition: 0.2s ease;
+}
+
+
+/* WHEN FIELD IS CLICKED */
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-red);
+
+  transform: translateY(-2px);
+
+  box-shadow: 5px 5px 0 var(--color-red);
+}
+
+
+/* MESSAGE BOX */
+
+.contact-form textarea {
+  min-height: 160px;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+.contact-button {
+  width: 100%;
+
+  margin-top: 28px;
+  padding: 15px 20px;
+
+  background: var(--color-red);
+  color: white;
+
+  border: 3px solid var(--color-black);
+  border-radius: 999px;
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 900;
+
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  box-shadow: 6px 6px 0 var(--color-black);
+
+  transition: 0.2s ease;
+}
+
+
+.contact-button:hover {
+  background: var(--color-red-dark);
+
+  transform: translate(-2px, -2px);
+
+  box-shadow: 8px 8px 0 var(--color-black);
+}
+
+
+.contact-button:active {
+  transform: translate(3px, 3px);
+
+  box-shadow: 2px 2px 0 var(--color-black);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .contact-card {
+    grid-template-columns: 1fr;
+
+    box-shadow: 7px 7px 0 var(--color-red);
+  }
+
+  .contact-intro {
+    padding: 30px 25px;
+  }
+
+  .contact-form {
+    padding: 30px 25px;
+  }
+
+}
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+footer {
+  padding: 28px 0;
+
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+
+/* =========================================================
+   12. RESPONSIVE STYLES
+   Styles below apply to tablets and smaller screens.
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 45px 0;
+  }
+
+  .hero-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    min-height: 300px;
+  }
+
+  .cards,
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    padding: 14px 0;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+}
