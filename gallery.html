@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery | Bitches Get Stitches</title>
+<meta name="description" content="Browse handmade crochet beanies, keychains, purses, totes, wearables, plushies, and custom pieces by Jamani.">
+<link rel="icon" href="image/log.jpeg">
+<link rel="apple-touch-icon" href="image/log.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Shrikhand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Stylesheet/styles.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">Bitches Get Stitches</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <img src="image/log.jpeg" alt="Bitches Get Stitches logo" class="header-logo" width="72" height="72">
+  </div>
+</header>
+
+<main>
+<section class="page-head"><div class="container">
+<div class="eyebrow">The gallery</div>
+<h1>A look at the work</h1>
+<p class="lead" style="margin:auto;">Every piece is one of a kind. Tap any photo for a closer look, or filter by type.</p>
+</div></section>
+
+<div class="container">
+<div class="gallery-filters" role="group" aria-label="Filter gallery by category">
+  <button type="button" class="filter-btn active" data-filter="all">All</button>
+  <button type="button" class="filter-btn" data-filter="wearables">Wearables</button>
+  <button type="button" class="filter-btn" data-filter="bags">Bags</button>
+  <button type="button" class="filter-btn" data-filter="plushies">Plushies</button>
+  <button type="button" class="filter-btn" data-filter="accessories">Keychains</button>
+  <button type="button" class="filter-btn" data-filter="custom">Custom</button>
+</div>
+</div>
+
+<section class="gallery container" aria-label="Crochet work">
+
+  <button type="button" class="gallery-item" data-category="wearables" aria-label="View larger: Beanies">
+    <img src="image/gallery_1.jpg" alt="Beanies: black, cream, and red crochet beanies, $55, additional custom design $5 to $10 extra" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+  <button type="button" class="gallery-item" data-category="accessories" aria-label="View larger: Keychains">
+    <img src="image/gallery_2.jpg" alt="Keychains: crochet bows, hearts, a strawberry, and smiling faces, $15" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+  <button type="button" class="gallery-item" data-category="bags" aria-label="View larger: Small purses">
+    <img src="image/gallery_3.jpg" alt="Small purse: brown, pink, and purple crochet shoulder purses, $55" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+  <button type="button" class="gallery-item" data-category="bags" aria-label="View larger: Tote bags">
+    <img src="image/gallery_4.jpg" alt="Tote bags: black and purple crochet totes, $65" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+  <button type="button" class="gallery-item" data-category="wearables" aria-label="View larger: Wearables">
+    <img src="image/gallery_5.jpg" alt="Wearables: crochet cardigans, a spiral sweater, and a black top, starting at $65, prices vary by design" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+  <button type="button" class="gallery-item" data-category="custom" aria-label="View larger: Custom ideas">
+    <img src="image/gallery_6.jpg" alt="Custom ideas into reality: heart bag, flower coasters, headband, bandana, and skirt, starting at $15" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+  <button type="button" class="gallery-item" data-category="plushies" aria-label="View larger: Plushies">
+    <img src="image/gallery_7.jpg" alt="Plushies: green, black cat, and purple crochet plushies, starting at $15" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+  <button type="button" class="gallery-item" data-category="plushies" aria-label="View larger: Luffy Smiski">
+    <img src="image/gallery_8.jpg" alt="Wanted poster featuring a crochet Luffy Smiski plushie: come and meet the whole crew" class="gallery-photo" width="1080" height="1350" loading="lazy">
+  </button>
+
+</section>
+
+<div class="container" style="text-align:center; padding-bottom:70px;">
+  <p class="lead" style="margin:0 auto 18px;">See something close to what you want? I can make it in your colors.</p>
+  <a class="btn" href="contact.html">Start a Custom Order</a>
+</div>
+
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <button type="button" class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+  <img src="" alt="" id="lightboxImg">
+  <button type="button" class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+</div>
+
+<footer><div class="container">
+© Eric W. 2026 All Rights Reserved — Bitches Get Stitches ♡
+<div class="footer-links"><a href="https://www.instagram.com/b1tches_get_stitches.pdx?obrf=MThtNDVwaHFsaWZueg%3D%3D" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+</div></footer>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll(".filter-btn");
+  var items = Array.prototype.slice.call(document.querySelectorAll(".gallery-item"));
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      buttons.forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      var filter = btn.getAttribute("data-filter");
+      items.forEach(function (item) {
+        var show = filter === "all" || item.getAttribute("data-category") === filter;
+        item.classList.toggle("is-hidden", !show);
+      });
+    });
+  });
+
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = document.getElementById("lightboxImg");
+  var closeBtn = document.getElementById("lightboxClose");
+  var prevBtn = document.getElementById("lightboxPrev");
+  var nextBtn = document.getElementById("lightboxNext");
+  var current = 0;
+  var lastFocus = null;
+
+  function visibleItems() {
+    return items.filter(function (item) { return !item.classList.contains("is-hidden"); });
+  }
+
+  function show(index) {
+    var list = visibleItems();
+    if (!list.length) return;
+    current = (index + list.length) % list.length;
+    var img = list[current].querySelector("img");
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    var single = list.length < 2;
+    prevBtn.hidden = single;
+    nextBtn.hidden = single;
+  }
+
+  items.forEach(function (item) {
+    item.addEventListener("click", function () {
+      lastFocus = item;
+      show(visibleItems().indexOf(item));
+      lightbox.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    lightboxImg.src = "";
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+
+  closeBtn.addEventListener("click", closeLightbox);
+  prevBtn.addEventListener("click", function () { show(current - 1); });
+  nextBtn.addEventListener("click", function () { show(current + 1); });
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (!lightbox.classList.contains("is-open")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
+  });
+
+  var startX = null;
+  lightbox.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  lightbox.addEventListener("touchend", function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
+})();
+</script>
+
+</body>
+</html>
