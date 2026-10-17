@@ -1,0 +1,1071 @@
+:root {
+ 
+  --color-cream: #f8f1e7;
+  --color-paper: #fffaf3;
+
+  --color-red: #9f1717;
+  --color-red-dark: #701010;
+  --color-red-light: #d96b62;
+
+  --color-black: #171414;
+  --color-text: #2b2222;
+  --color-muted: #756767;
+  --color-border: #e6c9c3;
+
+ 
+  --color-sage: #b94b43;
+  --color-sage-dark: #701010;
+  --color-clay: #a71919;
+
+ --font-body: "Nunito", sans-serif;
+--font-heading: "Shrikhand", cursive;
+
+  --container-width: 1100px;
+  --border-radius: 24px;
+}
+
+
+
+
+
+/* =========================================================
+   2. RESET & BASE STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+
+  background:
+    radial-gradient(circle at 10% 20%, rgba(159, 23, 23, 0.08), transparent 25%),
+    radial-gradient(circle at 90% 60%, rgba(217, 107, 98, 0.12), transparent 25%),
+    #f8f1e7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   3. LAYOUT HELPERS
+   ========================================================= */
+
+.container {
+  width: min(var(--container-width), 90%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section.alt {
+  background: var(--color-paper);
+}
+
+.page-head {
+  padding: 65px 0 35px;
+  text-align: center;
+}
+
+
+/* =========================================================
+   4. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0.15em 0;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+}
+
+h2 {
+  margin: 0.2em 0 0.5em;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.lead {
+  max-width: 620px;
+  color: var(--color-muted);
+  font-size: 1.12rem;
+}
+
+.eyebrow {
+  color: var(--color-clay);
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.note {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+
+
+/* =========================================================
+   5. HEADER & NAVIGATION
+   ========================================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: rgba(255, 250, 243, 0.96);
+
+  border-bottom: 3px solid var(--color-red);
+
+  box-shadow:
+    0 4px 20px rgba(80, 20, 20, 0.08);
+}
+
+
+/* HEADER LAYOUT */
+
+.nav {
+  display: flex;
+  min-height: 90px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+/* BUSINESS NAME */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  color: var(--color-red);
+
+  font-family: "Shrikhand", cursive;
+  font-size: 1.8rem;
+
+  text-decoration: none;
+
+  line-height: 1;
+
+  text-shadow:
+    2px 2px 0 rgba(159, 23, 23, 0.15);
+}
+
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+nav a {
+  display: inline-block;
+
+  padding: 9px 15px;
+
+  color: var(--color-black);
+
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  border-radius: 999px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+nav a:hover {
+  background: var(--color-red);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* LOGO */
+
+.header-logo {
+  width: 72px;
+  height: 72px;
+
+  object-fit: cover;
+
+  border: 3px solid var(--color-red);
+  border-radius: 50%;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   6. BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+
+  background: var(--color-red);
+  border: 2px solid var(--color-red);
+  border-radius: 999px;
+
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  text-decoration: none;
+
+  box-shadow: 0 5px 0 var(--color-red-dark);
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--color-red-dark);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background: var(--color-paper);
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  box-shadow: 0 5px 0 var(--color-black);
+}
+
+.btn.secondary:hover {
+  background: var(--color-black);
+  color: white;
+}
+
+
+/* =========================================================
+   7. HOME / HERO
+   ========================================================= */
+
+.hero {
+  padding: 80px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hero-art {
+  display: grid;
+  min-height: 480px;
+  place-items: center;
+  padding: 40px;
+
+  background:
+    radial-gradient(circle at 18% 20%, #b52020 0 10%, transparent 11%),
+    radial-gradient(circle at 82% 30%, #e29a91 0 14%, transparent 15%),
+    radial-gradient(circle at 30% 82%, #171414 0 9%, transparent 10%),
+    radial-gradient(circle at 75% 75%, #c94b42 0 13%, transparent 14%),
+    #fff5eb;
+
+  border: 3px solid var(--color-red);
+  border-radius: 36px;
+  box-shadow: 10px 10px 0 var(--color-black);
+}
+
+
+/* =========================================================
+   8. CONTENT SECTIONS & CARDS
+   ========================================================= */
+.card {
+  padding: 26px;
+
+  background: var(--color-paper);
+  border: 2px solid var(--color-red);
+  border-radius: var(--border-radius);
+
+  box-shadow: 7px 7px 0 rgba(159, 23, 23, 0.15);
+
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 10px 12px 0 rgba(159, 23, 23, 0.2);
+}
+
+.card:nth-child(even):hover {
+  transform: translateY(-6px) rotate(1deg);
+}
+
+
+/* =========================================================
+   9. GALLERY
+   Portrait (4:5) graphics shown whole, no captions.
+   ========================================================= */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 30px 0 90px;
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  aspect-ratio: 4 / 5;
+
+  background: var(--color-red);
+  border: 3px solid var(--color-black);
+  border-radius: 22px;
+
+  box-shadow: 8px 8px 0 var(--color-black);
+  cursor: zoom-in;
+  font: inherit;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.gallery-item:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.gallery-item:hover,
+.gallery-item:focus-visible {
+  transform: translateY(-8px) rotate(0deg);
+  box-shadow: 12px 12px 0 var(--color-red-light);
+}
+
+.gallery-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 960px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+  }
+}
+
+/* =========================================================
+   10. CONTACT FORM
+   ========================================================= */
+
+
+.contact-wrapper {
+  max-width: 1050px;
+}
+
+
+/* BIG OUTER CONTACT CARD */
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  overflow: hidden;
+
+  background: var(--color-paper);
+
+  border: 3px solid var(--color-black);
+  border-radius: 32px;
+
+  box-shadow: 12px 12px 0 var(--color-red);
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.contact-intro {
+  padding: 45px;
+
+  background: var(--color-red);
+  color: white;
+}
+
+.contact-intro .eyebrow {
+  color: white;
+}
+
+.contact-intro h2 {
+  color: white;
+
+  margin-top: 12px;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.contact-intro p {
+  color: #fff5ed;
+
+  font-size: 1.05rem;
+}
+
+
+/* INSTAGRAM */
+
+.instagram-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 25px;
+  padding: 10px 15px;
+
+  background: var(--color-paper);
+  color: var(--color-red);
+
+  border: 2px solid var(--color-black);
+  border-radius: 999px;
+
+  font-weight: 800;
+  text-decoration: none;
+
+  box-shadow: 4px 4px 0 var(--color-black);
+
+  transition: 0.2s ease;
+}
+
+
+.instagram-contact svg {
+  width: 25px;
+  height: 25px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+
+.instagram-contact:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 6px 6px 0 var(--color-black);
+}
+
+
+/* =========================================================
+   FORM SIDE
+   ========================================================= */
+
+.contact-form {
+  margin: 0;
+
+  padding: 45px;
+
+  background: var(--color-paper);
+
+  border: 0;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+/* FORM HEADING */
+
+.contact-form h2 {
+  margin: 0 0 25px;
+
+  color: var(--color-red);
+
+  font-family: var(--font-heading);
+
+  font-size: 2.3rem;
+}
+
+
+/* LABELS */
+
+.contact-form label {
+  display: block;
+
+  margin: 20px 0 7px;
+
+  color: var(--color-black);
+
+  font-size: 0.8rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* INPUTS */
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  background: #fffaf3;
+
+  border: 2px solid var(--color-black);
+  border-radius: 14px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+
+  outline: none;
+
+  box-shadow: 4px 4px 0 rgba(159, 23, 23, 0.22);
+
+  transition: 0.2s ease;
+}
+
+
+/* WHEN FIELD IS CLICKED */
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-red);
+
+  transform: translateY(-2px);
+
+  box-shadow: 5px 5px 0 var(--color-red);
+}
+
+
+/* MESSAGE BOX */
+
+.contact-form textarea {
+  min-height: 160px;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+.contact-button {
+  width: 100%;
+
+  margin-top: 28px;
+  padding: 15px 20px;
+
+  background: var(--color-red);
+  color: white;
+
+  border: 3px solid var(--color-black);
+  border-radius: 999px;
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 900;
+
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  box-shadow: 6px 6px 0 var(--color-black);
+
+  transition: 0.2s ease;
+}
+
+
+.contact-button:hover {
+  background: var(--color-red-dark);
+
+  transform: translate(-2px, -2px);
+
+  box-shadow: 8px 8px 0 var(--color-black);
+}
+
+
+.contact-button:active {
+  transform: translate(3px, 3px);
+
+  box-shadow: 2px 2px 0 var(--color-black);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .contact-card {
+    grid-template-columns: 1fr;
+
+    box-shadow: 7px 7px 0 var(--color-red);
+  }
+
+  .contact-intro {
+    padding: 30px 25px;
+  }
+
+  .contact-form {
+    padding: 30px 25px;
+  }
+
+}
+
+/* =========================================================
+   10b. PROCESS / HOW IT WORKS
+   ========================================================= */
+
+.process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  counter-reset: step;
+}
+
+.process-step {
+  position: relative;
+  padding: 30px 26px 26px;
+
+  background: var(--color-paper);
+  border: 2px solid var(--color-black);
+  border-radius: var(--border-radius);
+  box-shadow: 7px 7px 0 rgba(23, 20, 20, 0.12);
+}
+
+.process-step::before {
+  counter-increment: step;
+  content: counter(step);
+
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 14px;
+
+  background: var(--color-red);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  border-radius: 50%;
+}
+
+.process-step h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+
+.process-step p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   10c. MAKER / ABOUT BAND
+   ========================================================= */
+
+.maker {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.maker-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+
+  border: 3px solid var(--color-black);
+  border-radius: var(--border-radius);
+  box-shadow: 10px 10px 0 var(--color-red);
+}
+
+.maker h2 {
+  margin-top: 0.2em;
+}
+
+.maker p {
+  color: var(--color-muted);
+  max-width: 54ch;
+}
+
+.maker .btn {
+  margin-top: 10px;
+}
+
+/* =========================================================
+   10d. INSTAGRAM CALLOUT STRIP
+   ========================================================= */
+
+.insta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 34px 40px;
+
+  background: var(--color-red);
+  color: white;
+  border-radius: var(--border-radius);
+}
+
+.insta-strip h2 {
+  margin: 0;
+  color: white;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.insta-strip p {
+  margin: 6px 0 0;
+  color: #fff5ed;
+}
+
+.insta-strip .btn.secondary {
+  background: white;
+  border-color: white;
+  color: var(--color-red);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+
+.insta-strip .btn.secondary:hover {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: white;
+}
+
+/* =========================================================
+   9b. GALLERY FILTERS + LIGHTBOX
+   ========================================================= */
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 0 0;
+}
+
+.filter-btn {
+  padding: 9px 18px;
+
+  background: var(--color-paper);
+  border: 2px solid var(--color-black);
+  border-radius: 999px;
+
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  color: white;
+}
+
+.gallery-item.is-hidden {
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  display: none;
+  place-items: center;
+  padding: 30px 80px;
+
+  background: rgba(23, 20, 20, 0.9);
+}
+
+.lightbox.is-open {
+  display: grid;
+}
+
+.lightbox img {
+  max-width: min(90vw, 640px);
+  max-height: 88vh;
+  object-fit: contain;
+
+  border: 3px solid white;
+  border-radius: 18px;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+
+  background: white;
+  border: 2px solid var(--color-black);
+  border-radius: 50%;
+  box-shadow: 3px 3px 0 var(--color-red);
+
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-close {
+  top: 22px;
+  right: 28px;
+  font-size: 1.5rem;
+}
+
+.lightbox-nav {
+  top: 50%;
+  margin-top: -23px;
+  font-size: 2rem;
+  padding-bottom: 4px;
+}
+
+.lightbox-nav.prev { left: 20px; }
+.lightbox-nav.next { right: 20px; }
+
+.lightbox-nav[hidden] {
+  display: none;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: var(--color-red);
+  color: white;
+  transform: scale(1.08);
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    padding: 70px 12px;
+  }
+
+  .lightbox img {
+    max-width: 94vw;
+    max-height: 78vh;
+  }
+
+  .lightbox-nav {
+    top: auto;
+    bottom: 18px;
+    margin-top: 0;
+  }
+
+  .lightbox-nav.prev { left: calc(50% - 60px); }
+  .lightbox-nav.next { right: calc(50% - 60px); }
+}
+
+/* =========================================================
+   10e. FAQ / CARE ACCORDION
+   ========================================================= */
+
+.faq {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.faq-item summary {
+  padding: 20px 4px;
+
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-red);
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  font-family: var(--font-body);
+  font-weight: 800;
+}
+
+.faq-item[open] summary::after {
+  content: "\2212";
+}
+
+.faq-item p {
+  margin: 0 0 20px;
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+footer {
+  padding: 28px 0;
+
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 6px;
+}
+
+.footer-links a {
+  color: var(--color-red);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   12. RESPONSIVE STYLES
+   Styles below apply to tablets and smaller screens.
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 45px 0;
+  }
+
+  .hero-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    min-height: 300px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    padding: 14px 0;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .process,
+  .maker {
+    grid-template-columns: 1fr;
+  }
+
+  .maker-photo {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .insta-strip {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 26px;
+  }
+}
+
+/* =========================================================
+   13. ACCESSIBILITY & MOTION
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+.filter-btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
